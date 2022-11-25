@@ -50,7 +50,7 @@ int RangeSum(vector<int> &segtree,int sl, int sr, int ql, int qr, int i)
     else if(ql<=sl && sr<=qr)
         return segtree[i];
     else{
-        int mid= (sl+sr)+2;
+        int mid= (sl+sr)/2;
         return RangeSum(segtree,sl, mid, ql, qr,2*i+1) + RangeSum(segtree,mid+1, sr, ql, qr,2*i+2);
     }
 }
